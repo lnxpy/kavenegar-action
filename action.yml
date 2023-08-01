@@ -1,0 +1,25 @@
+name: Kavenegar Action
+description: Repository stats SMS notification
+author: Sadra Yahyapour
+
+inputs:
+  api_key:
+    description: the API key from your dashboard
+    required: true
+
+  receptor:
+    description: the reciever phone numbere
+    required: true
+
+  message:
+    description: message context
+    default: hello world
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+
+branding:
+  icon: message-square
+  color: gray-dark

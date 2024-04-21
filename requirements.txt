@@ -1,1 +1,2 @@
+pyaction==0.5.7
 kavenegar==1.1.2

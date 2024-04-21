@@ -1,6 +1,7 @@
 # Ignore all files and folders that start with a dot.
-**/*.
+.*
 
+# Ignore all virtual envs'
 venv/
 
 # Ignore all Python bytecode files.
@@ -14,12 +15,10 @@ __pycache__/
 build/
 dist/
 
-# Ignore all github-related files.
+# Ignore all pyaction-related files.
 README.md
 CONTRIBUTING.md
 CHANGELOG.md
 LICENSE
 Dockerfile
-.github/
-
-.git/
+Makefile

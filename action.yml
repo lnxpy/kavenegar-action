@@ -1,8 +1,26 @@
 name: Kavenegar Action
-description: Repository stats SMS notification
+description: Repository stats SMS notifier
 author: Sadra Yahyapour
 
+branding:
+  icon: message-square
+  color: gray-dark
+
+runs:
+  using: docker
+  image: Dockerfile
+
 inputs:
+  github_token:
+    description: The GitHub auth token
+    default: ${{ github.token }}
+    required: true
+
+  repository:
+    description: The repository name in the form of "<owner>/<repo>"
+    default: ${{ github.repository }}
+    required: true
+
   api_key:
     description: the API key from your dashboard
     required: true
@@ -15,11 +33,3 @@ inputs:
     description: message context
     default: hello world
     required: true
-
-runs:
-  using: docker
-  image: Dockerfile
-
-branding:
-  icon: message-square
-  color: gray-dark

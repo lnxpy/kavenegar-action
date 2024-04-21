@@ -1,23 +1,20 @@
-import os
 import sys
+from typing import List
 
 from kavenegar import KavenegarAPI
+from pyaction import io
 
 
-def main(args: list[str]) -> None:
+def main(args: List[str]) -> None:
     """main function
 
     Args:
-        args (list[str]): STDIN arguments
+        args: STDIN arguments
     """
 
-    # now you can access the inputs like
-    #    f"Hello {os.environ["INPUT_NAME"]}"
-    #
-
-    api_key = os.environ["INPUT_API_KEY"]
-    receptor = os.environ["INPUT_RECEPTOR"]
-    message = os.environ["INPUT_MESSAGE"]
+    api_key = io.read("api_key")
+    receptor = io.read("receptor")
+    message = io.read("message")
 
     api = KavenegarAPI(api_key)
     params = {
@@ -28,4 +25,4 @@ def main(args: list[str]) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+    main(sys.argv[1:])

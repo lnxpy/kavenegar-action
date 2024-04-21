@@ -1,6 +1,6 @@
 ## Kavenegar Action
 
-<img alt="action-badge" src="https://img.shields.io/badge/Kavenegar Action-white?logo=github-actions&label=GitHub%20Action&labelColor=white&color=0064D7"> <a href="https://github.com/lnxpy/cookiecutter-pyaction"><img alt="cookiecutter-pyaction" src="https://img.shields.io/badge/cookiecutter--pyaction-white?logo=cookiecutter&label=Made%20with&labelColor=white&color=0064D7"></a>
+<img alt="action-badge" src="https://img.shields.io/badge/Kavenegar Action-white?logo=github-actions&label=GitHub%20Action&labelColor=white&color=0064D7"> <a href="https://github.com/lnxpy/pyaction"><img alt="pyaction" src="https://img.shields.io/badge/PyAction-white?&label=Made%20with&labelColor=white&color=0064D7"></a>
 
 Send SMS within your workflows.
 
@@ -17,10 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-
       - name: Sending SMS
-        uses: lnxpy/kavenegar_action@v0.1.0
+        uses: lnxpy/kavenegar_action@v1
         with:
           api_key: ${{ secrets.API_KEY }}
           receptor: ${{ secrets.RECEPTOR }}
